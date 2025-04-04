@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('CACHE_STORE', 'database'),
+    'default' => env('CACHE_DRIVER', 'file'),
 
     /*
     |--------------------------------------------------------------------------
@@ -32,11 +32,10 @@ return [
     */
 
     'stores' => [
-
-        'array' => [
-            'driver' => 'array',
-            'serialize' => false,
-        ],
+    'file' => [
+        'driver' => 'file',
+        'path' => storage_path('framework/cache/data'),
+    ],
 
         'database' => [
             'driver' => 'database',
